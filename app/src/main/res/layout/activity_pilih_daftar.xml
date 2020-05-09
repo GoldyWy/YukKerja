@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PilihDaftar">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:gravity="center"
+                android:background="@drawable/bluegradient">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/ic_logoyukkerjaputih"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="-30dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="20dp"
+
+                >
+                <LinearLayout
+                    android:layout_marginBottom="30dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/whitebackground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:paddingVertical="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Daftar sebagai"
+                        android:textSize="30dp"
+                        android:textColor="@color/colorMain"
+                        android:textStyle="bold"
+                        />
+
+                    <LinearLayout
+                        android:paddingVertical="20dp"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_marginVertical="10dp"
+                            android:layout_height="100dp"
+                            android:textSize="30dp"
+                            android:text="Kandidat"
+                            android:textColor="@color/colorWhite"
+                            android:id="@+id/btnKandidat"
+                            android:background="@drawable/buttondaftarsbg"/>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_marginVertical="10dp"
+                            android:layout_height="100dp"
+                            android:textSize="30dp"
+                            android:text="Perusahaan"
+                            android:id="@+id/btnPerusahaan"
+                            android:textColor="@color/colorWhite"
+                            android:background="@drawable/buttondaftarsbg"/>
+
+
+                        
+
+                    </LinearLayout>
+
+
+
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

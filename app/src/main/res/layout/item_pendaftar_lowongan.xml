@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_marginVertical="3dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_width="match_parent"
+        android:padding="8dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:orientation="vertical">
+
+        <TextView
+            android:textStyle="bold"
+            android:textSize="17dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvNamaPendaftar"
+            android:textColor="@color/colorMain"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvGajiHarapan"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvTerima"
+            android:layout_marginVertical="5dp"
+            android:paddingHorizontal="7dp"
+            android:paddingVertical="3dp"
+            android:text="Pendaftar telah diterima"
+            android:visibility="gone"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/badge_terima"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvTolak"
+            android:layout_marginVertical="5dp"
+            android:paddingHorizontal="7dp"
+            android:paddingVertical="3dp"
+            android:visibility="gone"
+            android:text="Pendaftar telah ditolak"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/badge_tolak"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            >
+
+            <Button
+                android:layout_marginHorizontal="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_close_white_24dp"
+                android:text="Tolak"
+                android:backgroundTint="@color/colorRed"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/btnTolak"
+                />
+
+            <Button
+                android:layout_marginHorizontal="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_check_white_24dp"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/colorGreen"
+                android:text="Terima"
+                android:id="@+id/btnTerima"
+                />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

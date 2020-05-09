@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">YukKerja</string>
+    <string name="daftar"><u>Daftar</u></string>
+    <string name="masuk"><u>Masuk</u></string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_profil">Profil</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notif">Notifikasi</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_lamaran">Lamaran</string>
+    <string name="title_activity_utama_perusahaan">UtamaPerusahaan</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_utama_kandidat">UtamaKandidat</string>
+</resources>

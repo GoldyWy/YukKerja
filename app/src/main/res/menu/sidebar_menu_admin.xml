@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_keahlian_admin"
+            android:icon="@drawable/ic_assessment_black_24dp"
+            android:title="Keahlian" />
+        <item
+            android:id="@+id/nav_logout_admin"
+            android:icon="@drawable/ic_remove_circle_outline_black_24dp"
+            android:title="Keluar" />
+
+    </group>
+
+
+</menu>

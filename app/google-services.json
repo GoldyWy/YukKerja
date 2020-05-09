@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "130732950530",
+    "firebase_url": "https://yukkerja-c9dc0.firebaseio.com",
+    "project_id": "yukkerja-c9dc0",
+    "storage_bucket": "yukkerja-c9dc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130732950530:android:5cc1ee1ae3c8c0c854931b",
+        "android_client_info": {
+          "package_name": "com.example.goldy.yukkerja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130732950530-ci1lgvgv4h7d4r8hl38el5404u87ol5u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.goldy.yukkerja",
+            "certificate_hash": "44f8449cd96b83a6211b8e985e4b483ac1209b36"
+          }
+        },
+        {
+          "client_id": "130732950530-qhadcptto5icu4vjr7pbruuniqled9gt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBV0J0-ET9YwU5iDESKwfhhDhOMjFZxUc0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "130732950530-qhadcptto5icu4vjr7pbruuniqled9gt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

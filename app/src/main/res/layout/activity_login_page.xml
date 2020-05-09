@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginPage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:gravity="center"
+        android:background="@drawable/bluegradient">
+
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/ic_logoyukkerjaputih"
+            />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_marginTop="-30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+
+        >
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/whitebackground"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/kotaklogin"
+            >
+
+            <TextView
+                android:paddingVertical="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:text="Masuk"
+                android:textColor="@color/colorMain"
+                android:textStyle="bold"
+                />
+
+            <LinearLayout
+                android:paddingVertical="20dp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="@color/colorSecond"
+
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:id="@+id/etlEmail"
+                    android:backgroundTint="@color/colorSecond"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Password"
+                    android:textColor="@color/colorSecond"
+
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etlPassword"
+                    android:inputType="textPassword"
+                    android:backgroundTint="@color/colorSecond"
+                    android:hint="Password"/>
+
+            </LinearLayout>
+
+
+
+            <Button
+                android:paddingVertical="5dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Masuk"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:id="@+id/btnMasuk"
+                android:background="@drawable/buttonprimary"/>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belum punya akun ? "/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorSecond"
+                    android:text="@string/daftar"
+                    android:id="@+id/tvDaftar"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/ic_desainlogin"
+
+
+            >
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
