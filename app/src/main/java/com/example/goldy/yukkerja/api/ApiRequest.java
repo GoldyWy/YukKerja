@@ -277,6 +277,10 @@ public interface ApiRequest {
                                       @Field("password") String password,
                               @Field("token") String token);
 
+    @FormUrlEncoded
+    @POST("logout")
+    Call<ResponseModel> logout(@Field("id") String id);
+
 
     //Admin
     @FormUrlEncoded

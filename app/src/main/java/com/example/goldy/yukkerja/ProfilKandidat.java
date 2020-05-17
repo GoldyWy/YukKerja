@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.goldy.yukkerja.api.ApiRequest;
 import com.example.goldy.yukkerja.api.RetroServer;
+import com.example.goldy.yukkerja.model.ResponseModel;
 import com.example.goldy.yukkerja.model.ResponseModelPekerja;
 import com.example.goldy.yukkerja.util.Session;
 
@@ -139,11 +140,24 @@ public class ProfilKandidat extends Fragment {
         bLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                session.logout();
-                Intent i = new Intent(getContext(), LoginPage.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(i);
-                getActivity().finish();
+                ApiRequest apiRequest = RetroServer.getClient().create(ApiRequest.class);
+                retrofit2.Call<ResponseModel> logout = apiRequest.logout(session.getId());
+                logout.enqueue(new Callback<ResponseModel>() {
+                    @Override
+                    public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                        session.logout();
+                        Intent i = new Intent(getContext(), LoginPage.class);
+                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(i);
+                        getActivity().finish();
+                    }
+                    @Override
+                    public void onFailure(Call<ResponseModel> call, Throwable t) {
+                        Toast.makeText(getContext(), "Oops ada kesalahan...", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
             }
         });
 
