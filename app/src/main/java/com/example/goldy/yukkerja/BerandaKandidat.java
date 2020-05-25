@@ -1,11 +1,14 @@
 package com.example.goldy.yukkerja;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -82,6 +85,7 @@ public class BerandaKandidat extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(getActivity(), DetailFoto.class);
+                    i.putExtra("foto",session.getFoto());
                     startActivity(i);
                 }
             });
@@ -94,13 +98,20 @@ public class BerandaKandidat extends Fragment {
                     String cari = eCari.getText().toString();
 
                     if (!cari.equals("")){
+                        final ProgressDialog progressDialog;
+                        progressDialog = new ProgressDialog(getContext());
+                        progressDialog.setMessage("Mohon tunggu....");
+                        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                        progressDialog.setCancelable(false);
+                        progressDialog.show();
+
                         ApiRequest apiRequest = RetroServer.getClient().create(ApiRequest.class);
                         retrofit2.Call<ResponseModelLowongan> getCariLowongan = apiRequest.getCariLowongan(cari);
                         getCariLowongan.enqueue(new Callback<ResponseModelLowongan>() {
                             @Override
                             public void onResponse(Call<ResponseModelLowongan> call, Response<ResponseModelLowongan> response) {
                                 mItems = response.body().getData();
-
+                                progressDialog.dismiss();
                                 if (mItems.size() > 0){
                                     mAdapter = new LowonganKandidatAdapter(mItems , getContext());
                                     recyclerView.setAdapter(mAdapter);
@@ -112,7 +123,7 @@ public class BerandaKandidat extends Fragment {
 
                             @Override
                             public void onFailure(Call<ResponseModelLowongan> call, Throwable t) {
-
+                                progressDialog.dismiss();
                             }
                         });
 
@@ -123,6 +134,26 @@ public class BerandaKandidat extends Fragment {
                     return true;
                 }
                 return false;
+            }
+        });
+
+        eCari.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String cari = eCari.getText().toString();
+                if (cari.equals("")){
+                    getLowongan();
+                }
             }
         });
 
@@ -141,6 +172,12 @@ public class BerandaKandidat extends Fragment {
     }
 
     public void getLowongan(){
+        final ProgressDialog progressDialog;
+        progressDialog = new ProgressDialog(getContext());
+        progressDialog.setMessage("Mohon tunggu....");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.setCancelable(false);
+        progressDialog.show();
         ApiRequest apiRequest = RetroServer.getClient().create(ApiRequest.class);
         retrofit2.Call<ResponseModelLowongan> getLowongan = apiRequest.getLowongan();
         getLowongan.enqueue(new Callback<ResponseModelLowongan>() {
@@ -148,7 +185,7 @@ public class BerandaKandidat extends Fragment {
             public void onResponse(Call<ResponseModelLowongan> call, Response<ResponseModelLowongan> response) {
                 if (response.body().getData()!=null){
                     mItems = response.body().getData();
-
+                    progressDialog.dismiss();
                     if (mItems.size() > 0){
                         mAdapter = new LowonganKandidatAdapter(mItems , getContext());
                         recyclerView.setAdapter(mAdapter);
@@ -161,7 +198,7 @@ public class BerandaKandidat extends Fragment {
 
             @Override
             public void onFailure(Call<ResponseModelLowongan> call, Throwable t) {
-
+                progressDialog.dismiss();
             }
         });
     }

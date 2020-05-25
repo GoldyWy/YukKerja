@@ -175,7 +175,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nilai Akhir (IPK)"
+                        android:text="Nilai Akhir / IPK"
                         />
 
                     <EditText
@@ -189,7 +189,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="13dp"
                         android:textColor="@color/colorRed"
-                        android:text="Contoh : 3.00 / 4.00 atau 80 / 100 "
+                        android:text="Contoh : 80 / 100 atau 3.00 / 4.00  "
                         />
 
 
