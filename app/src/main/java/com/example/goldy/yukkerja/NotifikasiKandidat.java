@@ -93,6 +93,8 @@ public class NotifikasiKandidat extends Fragment {
                     mAdapter = new NotifikasiKandidatAdapter(mItems , getContext());
                     recyclerView.setAdapter(mAdapter);
                     mAdapter.notifyDataSetChanged();
+                }else{
+                    Toast.makeText(getContext(),"Anda tidak mempunyai notifikasi",Toast.LENGTH_SHORT).show();
                 }
 
             }

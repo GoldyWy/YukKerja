@@ -88,6 +88,8 @@ public class LamaranKandidat extends Fragment {
                     mAdapter = new LamaranKandidatAdapter(mItems , getContext());
                     recyclerView.setAdapter(mAdapter);
                     mAdapter.notifyDataSetChanged();
+                }else{
+                    Toast.makeText(getContext(),"Anda belum pernah melamar pekerjaan",Toast.LENGTH_SHORT).show();
                 }
             }
 
