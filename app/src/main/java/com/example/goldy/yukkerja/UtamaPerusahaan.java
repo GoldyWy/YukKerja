@@ -208,16 +208,19 @@ public class UtamaPerusahaan extends AppCompatActivity implements NavigationView
 
         retroServer = new RetroServer();
         if (session.getFoto() != null ){
-            Glide.with(UtamaPerusahaan.this).load(retroServer.url()+session.getFoto())
-                    .apply(RequestOptions.circleCropTransform())
-                    .into(iFoto);
-            iFoto.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent i = new Intent(UtamaPerusahaan.this, DetailFoto.class);
-                    startActivity(i);
-                }
-            });
+            if (session.getFoto() != "" ){
+                Glide.with(UtamaPerusahaan.this).load(retroServer.url()+session.getFoto())
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(iFoto);
+                iFoto.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(UtamaPerusahaan.this, DetailFoto.class);
+                        startActivity(i);
+                    }
+                });
+            }
+
         }
 
 

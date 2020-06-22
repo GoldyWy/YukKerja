@@ -104,10 +104,13 @@ public class BuatLowongan extends AppCompatActivity {
             public void onResponse(Call<ResponseModelKeahlian> call, Response<ResponseModelKeahlian> response) {
                 Log.d("RETRO", "response : " + response.body().toString());
                 List<Keahlian> detail = response.body().getData();
+                if (detail != null){
                     for (int i = 0; i < detail.size(); i++) {
                         mKeahlian = detail.get(i);
                         listItem[i] = mKeahlian.getNama();
                     }
+                }
+
 
             }
 

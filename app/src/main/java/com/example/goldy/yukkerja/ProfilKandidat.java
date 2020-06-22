@@ -74,6 +74,7 @@ public class ProfilKandidat extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(getActivity(), DetailFoto.class);
+                    i.putExtra("foto", session.getFoto());
                     startActivity(i);
                 }
             });

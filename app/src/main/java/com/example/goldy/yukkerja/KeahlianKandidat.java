@@ -100,17 +100,22 @@ public class KeahlianKandidat extends AppCompatActivity {
             public void onResponse(Call<ResponseModelKeahlian> call, Response<ResponseModelKeahlian> response) {
 
                 keahlians = response.body().getData();
-                Keahlian keahlian ;
-                String[] keahlianArray = new String[keahlians.size()+1] ;
-                keahlianArray[0] = "Pilih Keahlian";
-                for (int i = 1 ; i < keahlians.size()+1;i++){
-                    keahlian = keahlians.get(i-1);
-                    keahlianArray[i] = keahlian.getNama();
+                if (keahlians != null){
+                    Keahlian keahlian ;
+                    String[] keahlianArray = new String[keahlians.size()+1] ;
+                    keahlianArray[0] = "Pilih Keahlian";
+                    for (int i = 1 ; i < keahlians.size()+1;i++){
+                        keahlian = keahlians.get(i-1);
+                        keahlianArray[i] = keahlian.getNama();
+                    }
+
+                    ArrayAdapter<String> adapterKeahlian = new ArrayAdapter<String>(KeahlianKandidat.this, android.R.layout.simple_spinner_dropdown_item, keahlianArray);
+                    sKeahlian.setAdapter(adapterKeahlian);
+                    progressDialog.dismiss();
+                }else{
+                    progressDialog.dismiss();
                 }
 
-                ArrayAdapter<String> adapterKeahlian = new ArrayAdapter<String>(KeahlianKandidat.this, android.R.layout.simple_spinner_dropdown_item, keahlianArray);
-                sKeahlian.setAdapter(adapterKeahlian);
-                progressDialog.dismiss();
 
 
             }
@@ -140,6 +145,8 @@ public class KeahlianKandidat extends AppCompatActivity {
                 Toast.makeText(KeahlianKandidat.this,"Oops ada kesalahan...",Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
         bTambah.setOnClickListener(new View.OnClickListener() {
             @Override

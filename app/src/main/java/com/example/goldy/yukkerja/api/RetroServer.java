@@ -4,8 +4,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroServer {
-    private static final String base_url = "https://yukkerja.yukseminar.id/api/";
-    String url = "https://yukkerja.yukseminar.id/";
+    private static final String base_url = "https://yukkerja.yukseminar.xyz/api/";
+    String url = "https://yukkerja.yukseminar.xyz/";
 
     private static Retrofit retrofit;
 

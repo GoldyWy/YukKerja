@@ -42,16 +42,18 @@ public class DetailFoto extends AppCompatActivity {
 
         session = new Session(DetailFoto.this);
         retroServer = new RetroServer();
-
-        if (!foto.equals("")){
-            Glide.with(DetailFoto.this).load(retroServer.url()+foto)
-                    .into(iFoto);
-        }else{
-            if (session.getFoto() != null){
-                Glide.with(DetailFoto.this).load(retroServer.url()+session.getFoto())
+        if (foto != null){
+            if (!foto.equals("")){
+                Glide.with(DetailFoto.this).load(retroServer.url()+foto)
                         .into(iFoto);
+            }else{
+                if (session.getFoto() != null){
+                    Glide.with(DetailFoto.this).load(retroServer.url()+session.getFoto())
+                            .into(iFoto);
+                }
             }
         }
+
 
 
     }

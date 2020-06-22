@@ -76,6 +76,7 @@ public class KeahlianAdmin extends AppCompatActivity {
                             if (status.equals("1")){
                                 Toast.makeText(KeahlianAdmin.this,response.body().getMessage(),Toast.LENGTH_SHORT).show();
                                 mItems = response.body().getKeahlians();
+                                tKeahlian.setText("");
                                 if (mItems.size() > 0){
                                     mAdapter = new KeahlianAdminAdapter(mItems , KeahlianAdmin.this);
                                     recyclerView.setAdapter(mAdapter);
